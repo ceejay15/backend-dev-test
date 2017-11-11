@@ -1,0 +1,17 @@
+{
+  "name": "Part1",
+  "version": "1.0",
+  "description": "Solution for Cross-Origin-Resource-Sharing",
+  "author": "Charrie Joy Cabalde",
+  "license": "NA",
+  "dependencies": {
+    "BufferList": "0.0.0",
+    "async": "^2.5.0",
+    "body-parser": "^1.16.1",
+    "cors": "^2.8.4",
+    "curl": "^0.1.4",
+    "express": "^4.16.2",
+    "nodemon": "^1.12.1",
+    "winston": "^2.3.1"
+  }
+}
