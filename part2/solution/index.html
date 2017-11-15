@@ -97,6 +97,7 @@
         var json = JSON.parse(this.responseText);
         console.log('receiving from server:',json);
        /* document.getElementById("result").value = json.value;*/
+        document.getElementById("result").value = "";
        if(json.fizzBuzz.length>0){
 
            if(json.fizzBuzz.length ==1){
@@ -108,6 +109,8 @@
                }
                document.getElementById("result").value = tmp.slice(0,-1);
            }
+       }else{
+           document.getElementById("result").value =""
        }
         enableButton(button_id);
     }
