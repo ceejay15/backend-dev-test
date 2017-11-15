@@ -1,0 +1,24 @@
+{
+  "name": "Part3",
+  "version": "1.0.0",
+  "description": "Solution for TS-NODE FizzBuzz with Authentication",
+  "author": "Charrie Joy Cabalde",
+  "license": "ISC",
+  "scripts": {
+    "test": "mocha",
+    "test:watch": "npm run test -- --watch -R min"
+  },
+  "dependencies": {
+    "@types/node": "^8.0.51",
+    "BufferList": "0.0.0",
+    "async": "^2.5.0",
+    "body-parser": "^1.16.1",
+    "cors": "^2.8.4",
+    "curl": "^0.1.4",
+    "express": "^4.16.2",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1",
+    "ts-node": "^3.3.0",
+    "winston": "^2.3.1"
+  }
+}
