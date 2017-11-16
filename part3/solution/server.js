@@ -36,7 +36,7 @@ function fizzBuzz(number) {
         }
         else if (i % 7 === 0) {
             console.log("special_word");
-            myFizzBuzz.push({ value: "special_word" });
+            myFizzBuzz.push({ value: "ennui" });
         }
         else if (i % 3 != 0 && i % 5 != 0 && i % 7 != 0) {
             console.log(i);
@@ -49,4 +49,41 @@ function fizzBuzz(number) {
     }
     return { 'fizzBuzz': myFizzBuzz };
 }
+//start
+app.get('/myspecialword', function (req, res) {
+    console.log("-----requesting-----");
+    var url = "http://dev-test.madebywiser.com/part3/:x";
+    var auth = "Basic " + new Buffer('wiserdev' + ":" + 'password').toString("base64");
+    var request = require('request');
+    request.get({
+        url: url,
+        headers: { "Authorization": auth }
+    }, function (error, response, body) {
+        if (error) {
+            console.log('"cannot communicate with API ' + error);
+            res.send(error);
+        }
+        console.log('body : ', body);
+        res.send(body);
+    });
+    /*exports.checkApi = function (req, res) {
+        // do the GET request
+        request.get({
+            url: url,
+            headers: {
+                "Authorization": auth
+            }
+        }, function (error, response, body) {
+            if(error)
+            { console.error("Error while communication with api and ERROR is :  " + error);
+                res.send(error);
+            }
+            console.log('body : ', body);
+            res.send(body);
+
+        });
+    }*/
+    console.log('--------finish----------');
+    //end
+});
 app.listen("4000");
