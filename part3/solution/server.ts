@@ -41,7 +41,7 @@ function fizzBuzz(number){
             myFizzBuzz.push({value:"Buzz"});
         }
         else if(i % 7 ===0){
-            console.log("special_word");
+            console.log("ennui");
             myFizzBuzz.push({value:"ennui"});
         }
         else if(i %3 !=0 && i %5 !=0 && i % 7 !=0) {

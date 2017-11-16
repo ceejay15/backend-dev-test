@@ -13,6 +13,7 @@
     "BufferList": "0.0.0",
     "async": "^2.5.0",
     "body-parser": "^1.16.1",
+    "chai": "^4.1.2",
     "cors": "^2.8.4",
     "curl": "^0.1.4",
     "express": "^4.16.2",
