@@ -154,6 +154,19 @@
 		ajax.open("GET", address);
 		ajax.send();
 	}
+
+	function getSpecialWord(){
+        var ajax = new XMLHttpRequest();
+        ajax.addEventListener("load", onResponse);
+        ajax.open("GET", 'http://localhost:4000/myspecialword');
+        ajax.send();
+	}
+
+    getSpecialWord();
+	function onResponse(){
+        var json = JSON.parse(this.responseText);
+        console.log('onResponse=>',json);
+	}
 </script>
 
 </html>
