@@ -2,7 +2,6 @@ var express = require('express');
 var path = require('path');
 var http = require('http');
 var cors = require('cors');
-//var url =  require('url');
 
 var app = express();
 
@@ -34,10 +33,6 @@ function fizzBuzz(number){
     var myFizzBuzz = new Array();
 
 	for(var i=0; i < number; i++){
-	    /*if(i % 3 === 0 && i % 5 ===0) {
-           console.log("FizzBuzz");
-            myFizzBuzz.push({value:"Fizz Buzz"});
-        }else*/
         if(i %3 ===0){
 	        console.log("Fizz");
 	        myFizzBuzz.push({value:"Fizz"})
@@ -47,7 +42,7 @@ function fizzBuzz(number){
         }
         else if(i % 7 ===0){
             console.log("special_word");
-            myFizzBuzz.push({value:"special_word"});
+            myFizzBuzz.push({value:"ennui"});
         }
         else if(i %3 !=0 && i %5 !=0 && i % 7 !=0) {
             console.log(i);
@@ -60,5 +55,28 @@ function fizzBuzz(number){
     }
     return {'fizzBuzz':myFizzBuzz};
 }
+
+//start
+app.get('/myspecialword',function(req,res){
+    console.log("-----requesting-----");
+    var url = "http://dev-test.madebywiser.com/part3/:x";
+    var auth = "Basic " + new Buffer('wiserdev' + ":" + 'password').toString("base64");
+    var request = require('request');
+
+    request.get({
+           url :url,
+           headers : { "Authorization" :auth}
+    },function(error, response,body){
+        if(error){
+            console.log('"cannot communicate with API '+error);
+            res.send(error)
+        }
+        console.log('body : ', body);
+        res.send(body);
+    });
+
+    console.log('--------finish----------');
+//end
+});
 
 app.listen("4000");
